@@ -3,17 +3,20 @@
       "student1": {
         "nome": "Helder",
         "Idade": 32,
-        "email": "helder@helder"
+        "email": "helder@helder",
+        "cpf": 12345678910
       },
       "student2": {
         "nome": "Alice",
         "Idade": 20,
-        "email": "alice@alice.com"
+        "email": "alice@alice.com",
+        "cpf": 10987654321
       },
       "student3": {
         "nome": "Bruna",
         "Idade": 27,
-        "email": "bruna@bruna.com"
+        "email": "bruna@bruna.com",
+        "cpf": 99999999999
       }
     }
   }

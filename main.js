@@ -14,17 +14,18 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-// Form for creating a record
 document.querySelector('#createForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const nome = document.querySelector('#nome').value;
   const idade = parseInt(document.querySelector('#idade').value);
   const email = document.querySelector('#email').value;
+  const cpf = parseInt(document.querySelector('#cpf').value);
 
   const newRecord = {
     nome: nome,
     Idade: idade,
-    email: email
+    email: email,
+    cpf: cpf
   };
 
   database.ref('students').push(newRecord)
@@ -36,18 +37,19 @@ document.querySelector('#createForm').addEventListener('submit', (e) => {
     });
 });
 
-// Form for updating a record
 document.querySelector('#updateForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const updateId = document.querySelector('#updateId').value;
   const newNome = document.querySelector('#newNome').value;
   const newIdade = parseInt(document.querySelector('#newIdade').value);
   const newEmail = document.querySelector('#newEmail').value;
+  const newCpf = parseInt(document.querySelector('#newCpf').value);
 
   const updatedData = {
     nome: newNome,
     Idade: newIdade,
-    email: newEmail
+    email: newEmail,
+    cpf: newCpf
   };
 
   database.ref('students/' + updateId).update(updatedData)
@@ -59,7 +61,6 @@ document.querySelector('#updateForm').addEventListener('submit', (e) => {
     });
 });
 
-// Form for reading a record
 document.querySelector('#readForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const readId = document.querySelector('#readId').value;
@@ -80,7 +81,6 @@ document.querySelector('#readForm').addEventListener('submit', (e) => {
     });
 });
 
-// Form for deleting a record
 document.querySelector('#deleteForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const deleteId = document.querySelector('#deleteId').value;
