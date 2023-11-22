@@ -31,9 +31,11 @@ document.querySelector('#createForm').addEventListener('submit', (e) => {
   database.ref('students').push(newRecord)
     .then(() => {
       console.log('Record created successfully');
+      alert("Sucesso!");
     })
     .catch(error => {
       console.error('Error creating record:', error);
+      alert("Ocorreu um erro!");
     });
 });
 
@@ -55,9 +57,11 @@ document.querySelector('#updateForm').addEventListener('submit', (e) => {
   database.ref('students/' + updateId).update(updatedData)
     .then(() => {
       console.log('Record updated successfully');
+      alert("Sucesso!");
     })
     .catch(error => {
       console.error('Error updating record:', error);
+      alert("Ocorreu um erro!");
     });
 });
 
@@ -88,8 +92,10 @@ document.querySelector('#deleteForm').addEventListener('submit', (e) => {
   database.ref('students/' + deleteId).remove()
     .then(() => {
       console.log('Record deleted successfully');
+      alert("Sucesso!");
     })
     .catch(error => {
       console.error('Error deleting record:', error);
+      alert("Ocorreu um erro!");
     });
 });
